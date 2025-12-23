@@ -7,6 +7,10 @@ from mediapipe.tasks.python import vision
 import time
 import sys
 
+DETECTION_THRESHOLD = 0.7
+real = 0
+spoofing = 0
+
 path_modelo = 'face_landmarker.task'
 
 if len(sys.argv) > 2:
@@ -63,10 +67,19 @@ while cap.isOpened():
             if distancia < 0.6:
                 nome_exibido = f"Pedro ({distancia:.2f})"
                 cor_box = (0, 255, 0) #VERDE
+                real += 1
+            else:
+                 spoofing += 1
         cv2.rectangle(frame, (left, top), (right, bottom), cor_box, 2)
         cv2.putText(frame, nome_exibido, (left, top - 10), cv2.FONT_HERSHEY_SIMPLEX, 0.6, cor_box, 2)
     cv2.imshow('Reconhecimento Naive MediaPipe', frame)
     if cv2.waitKey(1) & 0xFF == ord('q'): break
+try:
+    detection_rate = real/(real+spoofing)
+except ZeroDivisionError:
+     detection_rate = 0
+result = "Real" if  detection_rate >= DETECTION_THRESHOLD else "Spoofing/Not Known"
+print(f"{result}")
 
 cap.release()
 cv2.destroyAllWindows()

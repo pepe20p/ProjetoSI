@@ -9,6 +9,10 @@ import random
 import sys
 
 path_modelo = 'face_landmarker.task'
+DETECITION_THRESHOLD = 0.7
+
+real = 0
+spoofing = 0
 
 if len(sys.argv) > 2:
 	arquivo_rosto = sys.argv[1]
@@ -119,5 +123,9 @@ while cap.isOpened():
     cv2.imshow('Sistema Challenge-Response', frame)
     if cv2.waitKey(1) & 0xFF == ord('q'): break
 
+
+result = 'Real' if liveness_aprovado else 'Spoogin/Not known'
+
+print(f"{result}")
 cap.release()
 cv2.destroyAllWindows()
