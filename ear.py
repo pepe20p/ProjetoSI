@@ -5,12 +5,24 @@ from mediapipe.tasks import python
 from mediapipe.tasks.python import vision
 from scipy.spatial import distance
 import time
+import sys
 
 path_modelo = 'face_landmarker.task'
-arquivo_rosto = 'pedro.jpg'
+
+if len(sys.argv) > 2:
+	arquivo_rosto = sys.argv[1]
+	video_input = sys.argv[2]
+else:
+	arquivo_rosto = 'pedro.jpg'
+	video_input =  0
 
 #Ajustar
 EAR_THRESHOLD = 0.4  # Limiar para considerar olho aberto
+DETECTION_THRESHOLD = 0.7
+
+real = 0
+spoofing = 0
+
 
 #Var
 contador = 0
@@ -38,7 +50,7 @@ def calcula_ear(landmarks, top_bot, esq_dir):
     h = distance.euclidean((landmarks[esq_dir[0]].x, landmarks[esq_dir[1]].y),(landmarks[esq_dir[1]].x, landmarks[esq_dir[1]].y))
     return v/h
 
-cap = cv2.VideoCapture(0)
+cap = cv2.VideoCapture(video_input)
 
 while cap.isOpened():
     ret, frame = cap.read()
@@ -61,7 +73,7 @@ while cap.isOpened():
         ear_esq = calcula_ear(landmarks, L_EYE_TOP_BOT, L_EYE_LEFT_RIGHT)
         ear_dir = calcula_ear(landmarks, R_EYE_TOP_BOT, R_EYE_LEFT_RIGHT)
         ear_medio = (ear_esq + ear_dir) / 2.0
-        print(ear_medio)
+        # print(ear_medio)
 
         if ear_medio < EAR_THRESHOLD:
             if contador != 0:
@@ -73,7 +85,9 @@ while cap.isOpened():
             contador = 1
             if piscadas > 0:
                 status_liveness = "Liveness OK. Piscadas:{}".format(piscadas)
+                real += 1
             cor_liveness = (0, 255, 0) # Verde
+
 
             xs = [int(l.x * w_frame) for l in landmarks]
             ys = [int(l.y * h_frame) for l in landmarks]
@@ -96,6 +110,7 @@ while cap.isOpened():
             cv2.circle(frame, (int(p.x * w_frame), int(p.y * h_frame)), 2, cor_liveness, -1)
     else:
         status_liveness = "Nao Liveness"
+        spoofing += 1
         piscadas = 0
         contador = 0
         nome_identificado = ""
@@ -106,6 +121,12 @@ while cap.isOpened():
         cv2.putText(frame, nome_identificado, (20, 80), cv2.FONT_HERSHEY_SIMPLEX, 1, (255, 255, 255), 2)
     cv2.imshow('Liveness EAR + Reconhecimento Naive', frame)
     if cv2.waitKey(1) & 0xFF == ord('q'): break
-
+try:
+    detection_rate = real/(real+spoofing)
+except ZeroDivisionError:
+     detection_rate = 0
+result = "Real" if  detection_rate >= DETECTION_THRESHOLD else "Spoofing/Not Known"
+print(f"{result}")
 cap.release()
 cv2.destroyAllWindows()
+detector.close()

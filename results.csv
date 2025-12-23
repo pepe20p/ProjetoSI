@@ -1,0 +1,94 @@
+person,program,category,video,is_real,output
+JA,desafio,real,real3.mp4,True,Spoogin/Not known
+JA,ear,real,real3.mp4,True,Spoofing/Not Known
+JA,naive,real,real3.mp4,True,Real
+JA,desafio,real,real1.mp4,True,Real
+JA,ear,real,real1.mp4,True,Spoofing/Not Known
+JA,naive,real,real1.mp4,True,Real
+JA,desafio,real,real2.mp4,True,Real
+JA,ear,real,real2.mp4,True,Spoofing/Not Known
+JA,naive,real,real2.mp4,True,Real
+JA,desafio,foto,foto1.mp4,False,Spoogin/Not known
+JA,ear,foto,foto1.mp4,False,Spoofing/Not Known
+JA,naive,foto,foto1.mp4,False,Real
+JA,desafio,foto,foto.mp4,False,Spoogin/Not known
+JA,ear,foto,foto.mp4,False,Spoofing/Not Known
+JA,naive,foto,foto.mp4,False,Real
+JA,desafio,foto,foto2.mp4,False,Spoogin/Not known
+JA,ear,foto,foto2.mp4,False,Spoofing/Not Known
+JA,naive,foto,foto2.mp4,False,Real
+JA,desafio,video,video2.mp4,False,Spoogin/Not known
+JA,ear,video,video2.mp4,False,Spoofing/Not Known
+JA,naive,video,video2.mp4,False,Real
+JA,desafio,video,video1.mp4,False,Spoogin/Not known
+JA,ear,video,video1.mp4,False,Spoofing/Not Known
+JA,naive,video,video1.mp4,False,Real
+JA,desafio,video_spooging_completo,completo1.mp4,False,Real
+JA,ear,video_spooging_completo,completo1.mp4,False,Spoofing/Not Known
+JA,naive,video_spooging_completo,completo1.mp4,False,Real
+JA,desafio,video_spooging_completo,completo2.mp4,False,Real
+JA,ear,video_spooging_completo,completo2.mp4,False,Spoofing/Not Known
+JA,naive,video_spooging_completo,completo2.mp4,False,Real
+JA,desafio,video_spooging_completo,completo.mp4,False,Real
+JA,ear,video_spooging_completo,completo.mp4,False,Spoofing/Not Known
+JA,naive,video_spooging_completo,completo.mp4,False,Real
+JP,desafio,real,real.mp4,True,Real
+JP,ear,real,real.mp4,True,Real
+JP,naive,real,real.mp4,True,Real
+JP,desafio,real,real2.mp4,True,Spoogin/Not known
+JP,ear,real,real2.mp4,True,Real
+JP,naive,real,real2.mp4,True,Real
+JP,desafio,foto,foto.mp4,False,Spoogin/Not known
+JP,ear,foto,foto.mp4,False,Spoofing/Not Known
+JP,naive,foto,foto.mp4,False,Real
+JP,desafio,foto,foto_lado.mp4,False,Real
+JP,ear,foto,foto_lado.mp4,False,Real
+JP,naive,foto,foto_lado.mp4,False,Real
+JP,desafio,video,video1.mp4,False,Spoogin/Not known
+JP,ear,video,video1.mp4,False,Spoofing/Not Known
+JP,naive,video,video1.mp4,False,Real
+JP,desafio,video,video.mp4,False,Real
+JP,ear,video,video.mp4,False,Spoofing/Not Known
+JP,naive,video,video.mp4,False,Real
+JP,desafio,video_spooging_completo,video2.mp4,False,Spoogin/Not known
+JP,ear,video_spooging_completo,video2.mp4,False,Real
+JP,naive,video_spooging_completo,video2.mp4,False,Real
+JP,desafio,video_spooging_completo,spoofing.mp4,False,Real
+JP,ear,video_spooging_completo,spoofing.mp4,False,Real
+JP,naive,video_spooging_completo,spoofing.mp4,False,Real
+PEDRO,desafio,real,Legit.mov,True,Real
+PEDRO,ear,real,Legit.mov,True,Real
+PEDRO,naive,real,Legit.mov,True,Real
+PEDRO,desafio,real,Legit1.mov,True,Spoogin/Not known
+PEDRO,ear,real,Legit1.mov,True,Real
+PEDRO,naive,real,Legit1.mov,True,Real
+PEDRO,desafio,real,legit2.mov,True,Real
+PEDRO,ear,real,legit2.mov,True,Real
+PEDRO,naive,real,legit2.mov,True,Real
+PEDRO,desafio,foto,Foto.mov,False,Spoogin/Not known
+PEDRO,ear,foto,Foto.mov,False,Spoofing/Not Known
+PEDRO,naive,foto,Foto.mov,False,Real
+PEDRO,desafio,foto,Foto1.mov,False,Spoogin/Not known
+PEDRO,ear,foto,Foto1.mov,False,Spoofing/Not Known
+PEDRO,naive,foto,Foto1.mov,False,Real
+PEDRO,desafio,foto,Foto2.mov,False,Spoogin/Not known
+PEDRO,ear,foto,Foto2.mov,False,Spoofing/Not Known
+PEDRO,naive,foto,Foto2.mov,False,Real
+PEDRO,desafio,video,VideoPisc.mov,False,Spoogin/Not known
+PEDRO,ear,video,VideoPisc.mov,False,Real
+PEDRO,naive,video,VideoPisc.mov,False,Real
+PEDRO,desafio,video,VideoPisc1.mov,False,Spoogin/Not known
+PEDRO,ear,video,VideoPisc1.mov,False,Spoofing/Not Known
+PEDRO,naive,video,VideoPisc1.mov,False,Real
+PEDRO,desafio,video,VideoPiscand2.mov,False,Spoogin/Not known
+PEDRO,ear,video,VideoPiscand2.mov,False,Real
+PEDRO,naive,video,VideoPiscand2.mov,False,Real
+PEDRO,desafio,video_spooging_completo,SpoofCompleto.mov,False,Spoogin/Not known
+PEDRO,ear,video_spooging_completo,SpoofCompleto.mov,False,Real
+PEDRO,naive,video_spooging_completo,SpoofCompleto.mov,False,Real
+PEDRO,desafio,video_spooging_completo,SpoofCompleto1.mov,False,Spoogin/Not known
+PEDRO,ear,video_spooging_completo,SpoofCompleto1.mov,False,Real
+PEDRO,naive,video_spooging_completo,SpoofCompleto1.mov,False,Real
+PEDRO,desafio,video_spooging_completo,Spoofcompleto2.mov,False,Real
+PEDRO,ear,video_spooging_completo,Spoofcompleto2.mov,False,Spoofing/Not Known
+PEDRO,naive,video_spooging_completo,Spoofcompleto2.mov,False,Real
